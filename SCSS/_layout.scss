@@ -1,0 +1,65 @@
+@use 'variables' as *;
+
+header {
+  text-align: center;
+  padding: 10px 0;
+  background-color: white;
+  box-shadow: $box-shadow;
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+  }
+}
+
+.ville {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 8px;
+
+  p {
+    margin-left: 5px;
+  }
+}
+
+.reserver {
+  text-align: center;
+  padding: 30px 20px;
+
+  button {
+    background: $primary-gradient;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.fonctionnement {
+  background-color: white;
+  padding: 30px 20px;
+
+  .choix {
+    display: flex;
+    align-items: center;
+    background-color: $light-grey;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 10px 0;
+    box-shadow: $box-shadow;
+
+    span {
+      background-color: $primary-color;
+      color: white;
+      border-radius: 50%;
+      padding: 4px 10px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+  }
+}

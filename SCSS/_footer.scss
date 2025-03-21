@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.footer {
+  background-color: $dark-grey;
+  color: white;
+  padding: 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+}
