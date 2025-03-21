@@ -1,0 +1,134 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 10px 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 1.8rem;
+}
+
+.ville {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 8px;
+}
+.ville p {
+  margin-left: 5px;
+}
+
+.reserver {
+  text-align: center;
+  padding: 30px 20px;
+}
+.reserver button {
+  background: linear-gradient(90deg, #ff79da, #9356dc);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fonctionnement {
+  background-color: white;
+  padding: 30px 20px;
+}
+.fonctionnement .choix {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.fonctionnement .choix span {
+  background-color: #9356dc;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 10px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.restaurants {
+  padding: 30px 20px;
+}
+.restaurants .card {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.restaurants .card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.restaurants .card .nouveau {
+  top: 10px;
+  right: 10px;
+  background-color: #99e2d0;
+  color: #008766;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.restaurants .card .card-content {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurants .card .card-content h4 {
+  margin-bottom: 5px;
+}
+.restaurants .card .card-content p {
+  color: grey;
+  font-size: 0.9rem;
+}
+.restaurants .card .card-content .like-icon {
+  font-size: 1.4rem;
+  color: grey;
+}
+
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 20px;
+}
+.footer a {
+  color: white;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+/*# sourceMappingURL=main.css.map */
