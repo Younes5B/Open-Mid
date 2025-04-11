@@ -76,14 +76,25 @@ header {
 .footer {
   background-color: $dark-grey;
   color: white;
-  padding: 20px;
+  padding: 10px;
 
   a {
     color: white;
     display: block;
     margin-bottom: 8px;
-    font-size: 0.9rem;
+    text-decoration: none;
+    list-style: none;
   }
+
+ .proposer {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+ }
+
+ img {
+  margin-bottom: 10px;
+ }
 }
 
 
