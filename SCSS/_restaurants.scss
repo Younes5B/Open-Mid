@@ -60,9 +60,10 @@ header {
 
     .restaurant-title {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         margin-bottom: 30px;
+        gap: 30px;
 
         h2 {
 
@@ -108,53 +109,131 @@ header {
             box-shadow: $box-shadow;
             cursor: pointer;
             transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateX(-200px);
+            animation: fadeInLeft 1s ease-out forwards;
+        }
 
-            &:hover {
-                transform: scale(1.02);
+        .menu-item:nth-child(1) {
+            animation-delay: 0.4s;
+        }
+
+        .menu-item:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .menu-item:nth-child(3) {
+            animation-delay: 1.3s;
+        }
+
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
+        }
 
-            h4 {
-                font-size: 16px;
-                font-weight: 500;
-                margin: 0 0 5px 0;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+        .menu-item::after {
+            content: "✔";
+            position: absolute;
+            top: 50%;
+            transform: translateX(800%) translateY(-50%);
+            opacity: 0;
+            background-color: $primary-color;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 50%;
+            transition: transform 0.4s ease, opacity 0.3s ease;
+        }
 
-                span {
-                    font-weight: 700;
-                    position: relative;
-                    top: 24px;
-                }
+        .menu-item:hover::after {
+            transform: translateX(700%) translateY(-50%);
+            opacity: 1;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0 0 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+                font-weight: 700;
+                position: relative;
+                top: 24px;
             }
+        }
 
-            p {
-                font-size: 14px;
-                color: #666;
-                margin: 0;
-            }
+        p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
         }
     }
 
-    .btn-order {
-        display: block;
-        margin: 20px auto;
-        padding: 15px 42px;
-        background: $primary-gradient;
-        color: $text-color;
-        border: none;
-        border-radius: 25px;
-        font-size: 16px;
-        cursor: pointer;
-        box-shadow: $box-shadow;
-        transition: background 0.3s ease, transform 0.3s ease;
+    .menu-item h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        &:hover {
-            background: linear-gradient(90deg, lighten(#ff79da, 5%), lighten(#9356dc, 5%));
-            transform: scale(1.05);
-        }
+.menu-item h4 span {
+  margin-left: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.menu-item h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+}
+
+.btn-order {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 42px;
+    background: $primary-gradient;
+    color: $text-color;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: $box-shadow;
+    transition: background 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(90deg, lighten(#ff79da, 5%), lighten(#9356dc, 5%));
+        transform: scale(1.05);
     }
 }
+
+.menu-item h4 {
+  display: flex;               /* Met le titre et le prix sur une même ligne */
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;                   /* petit espace entre le texte et le prix */
+}
+
+.menu-item h4::after {
+  content: ""; /* évite que le texte coupe trop tôt si pas nécessaire */
+}
+
+.menu-item h4 span {
+  flex-shrink: 0;              /* le prix ne se réduit jamais */
+  margin-left: 10px;
+}
+
+.menu-item h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
 
 /****** Media queries ***********/
 /* Medium devices (PC, less/equal than 1024px) */
@@ -186,5 +265,23 @@ header {
                 width: 50%;
             }
         }
+    }
+
+    .menu-item::after {
+        content: "✔";
+        position: absolute;
+        top: 50%;
+        transform: translateX(2000%) translateY(-50%);
+        opacity: 0;
+        background-color: $primary-color;
+        color: white;
+        padding: 8px 10px;
+        border-radius: 50%;
+        transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .menu-item:hover::after {
+        transform: translateX(1200%) translateY(-50%);
+        opacity: 1;
     }
 }
