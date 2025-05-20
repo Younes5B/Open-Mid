@@ -427,6 +427,10 @@ header .fa-arrow-left {
   opacity: 0;
   transform: translateX(-200px);
   animation: fadeInLeft 1s ease-out forwards;
+  height: 90px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .container .menu .menu-item:nth-child(1) {
   animation-delay: 0.4s;
@@ -442,40 +446,6 @@ header .fa-arrow-left {
     opacity: 1;
     transform: translateX(0);
   }
-}
-.container .menu .menu-item::after {
-  content: "✔";
-  position: absolute;
-  top: 50%;
-  transform: translateX(800%) translateY(-50%);
-  opacity: 0;
-  background-color: #9356dc;
-  color: white;
-  padding: 8px 10px;
-  border-radius: 50%;
-  transition: transform 0.4s ease, opacity 0.3s ease;
-}
-.container .menu .menu-item:hover::after {
-  transform: translateX(700%) translateY(-50%);
-  opacity: 1;
-}
-.container .menu h4 {
-  font-size: 16px;
-  font-weight: 500;
-  margin: 0 0 5px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.container .menu h4 span {
-  font-weight: 700;
-  position: relative;
-  top: 24px;
-}
-.container .menu p {
-  font-size: 14px;
-  color: #666;
-  margin: 0;
 }
 .container .menu-item h4 {
   display: flex;
@@ -498,39 +468,36 @@ header .fa-arrow-left {
   margin: 20px auto;
   padding: 15px 42px;
   background: linear-gradient(90deg, #ff79da, #9356dc);
-  color: #ffffff;
   border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, transform 0.3s ease;
+  border-radius: 30px;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .btn-order:hover {
-  background: linear-gradient(90deg, rgb(255, 146.5, 225.0410447761), rgb(160.5, 107.125, 224.375));
-  transform: scale(1.05);
-}
-
-.menu-item h4 {
-  display: flex; /* Met le titre et le prix sur une même ligne */
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px; /* petit espace entre le texte et le prix */
-}
-
-.menu-item h4::after {
-  content: ""; /* évite que le texte coupe trop tôt si pas nécessaire */
-}
-
-.menu-item h4 span {
-  flex-shrink: 0; /* le prix ne se réduit jamais */
-  margin-left: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, #fe9de3, #a77bde);
 }
 
 .menu-item h4 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.menu-anim {
+  background-color: green;
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -30px;
+}
+
+.menu-anim:hover {
+  margin-right: 0px;
 }
 
 /****** Media queries ***********/
@@ -556,22 +523,6 @@ header .fa-arrow-left {
     flex-direction: column;
     flex-wrap: wrap;
     width: 50%;
-  }
-  .menu-item::after {
-    content: "✔";
-    position: absolute;
-    top: 50%;
-    transform: translateX(2000%) translateY(-50%);
-    opacity: 0;
-    background-color: #9356dc;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 50%;
-    transition: transform 0.4s ease, opacity 0.3s ease;
-  }
-  .menu-item:hover::after {
-    transform: translateX(1200%) translateY(-50%);
-    opacity: 1;
   }
 }
 
