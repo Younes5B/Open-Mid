@@ -1,4 +1,3 @@
-@charset "UTF-8";
 header {
   text-align: center;
   padding: 10px 0;
@@ -220,7 +219,7 @@ p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #ff79da, #9356dc); /* charte */
+  background: linear-gradient(135deg, #ff79da, #9356dc);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -228,7 +227,6 @@ p {
   animation: hideLoader 3s forwards;
 }
 
-/* Disparition du loader après 3s */
 @keyframes hideLoader {
   0% {
     opacity: 1;
@@ -242,7 +240,6 @@ p {
     visibility: hidden;
   }
 }
-/* Spinner */
 .spinner {
   width: 60px;
   height: 60px;
@@ -261,7 +258,7 @@ p {
   }
 }
 /****** Media queries ***********/
-/* Medium devices (PC, less/equal than 1024px) */
+/* Medium devices (PC, more/equal than 1024px) */
 @media (min-width: 1024px) {
   header {
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
@@ -419,7 +416,6 @@ header .fa-arrow-left {
 .container .menu .menu-item {
   background: #ffffff;
   border-radius: 15px;
-  padding: 15px;
   margin-bottom: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -427,10 +423,11 @@ header .fa-arrow-left {
   opacity: 0;
   transform: translateX(-200px);
   animation: fadeInLeft 1s ease-out forwards;
-  height: 90px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 15px;
 }
 .container .menu .menu-item:nth-child(1) {
   animation-delay: 0.4s;
@@ -446,21 +443,6 @@ header .fa-arrow-left {
     opacity: 1;
     transform: translateX(0);
   }
-}
-.container .menu-item h4 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.container .menu-item h4 span {
-  margin-left: 10px;
-  flex-shrink: 0;
-  white-space: nowrap;
-}
-.container .menu-item h4 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .btn-order {
@@ -480,28 +462,75 @@ header .fa-arrow-left {
   background: linear-gradient(90deg, #fe9de3, #a77bde);
 }
 
-.menu-item h4 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.menu-anim {
-  background-color: green;
-  height: 100%;
-  width: 30px;
+.menu-anim.menu-detail {
+  flex-grow: 1;
+  flex-shrink: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-right: -30px;
+  min-width: 0;
+  padding-right: 70px;
 }
 
-.menu-anim:hover {
-  margin-right: 0px;
+.menu-anim.menu-detail h4 {
+  margin: 0;
+  font-size: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.menu-anim.menu-detail p {
+  margin: 5px 0 0 0;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.menu-anim.menu-detail p span {
+  font-weight: bold;
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.menu-anim.menu-validation {
+  background: #99E2D0;
+  width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease-out;
+  flex-shrink: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.menu-anim.menu-validation i {
+  color: white;
+  font-size: 1.5rem;
+  transform: scale(0);
+  transition: transform 0.3s ease-out;
+}
+
+.menu-item:hover .menu-anim.menu-validation {
+  width: 60px;
+}
+.menu-item:hover .menu-anim.menu-validation i {
+  transform: scale(1);
 }
 
 /****** Media queries ***********/
-/* Medium devices (PC, less/equal than 1024px) */
+/* Medium devices (PC, more/equal than 1024px) */
 @media (min-width: 1024px) {
   .container .restaurant-title {
     justify-content: center;
@@ -512,17 +541,17 @@ header .fa-arrow-left {
   }
   .container .menu-item-all {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    align-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-start;
     width: 100%;
   }
   .container .menu-item-all .menu-item {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 50%;
+    width: calc(50% - 10px);
+    max-width: 450px;
   }
 }
 

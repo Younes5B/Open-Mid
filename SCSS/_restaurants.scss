@@ -66,7 +66,6 @@ header {
         gap: 30px;
 
         h2 {
-
             font-size: 28px;
             font-weight: 400;
             margin: 0;
@@ -104,7 +103,6 @@ header {
         .menu-item {
             background: $text-color;
             border-radius: 15px;
-            padding: 15px;
             margin-bottom: 15px;
             box-shadow: $box-shadow;
             cursor: pointer;
@@ -112,10 +110,11 @@ header {
             opacity: 0;
             transform: translateX(-200px);
             animation: fadeInLeft 1s ease-out forwards;
-            height: 90px;
             overflow: hidden;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 15px;
         }
 
         .menu-item:nth-child(1) {
@@ -137,24 +136,6 @@ header {
             }
         }
     }
-
-    .menu-item h4 {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .menu-item h4 span {
-        margin-left: 10px;
-        flex-shrink: 0;
-        white-space: nowrap;
-    }
-
-    .menu-item h4 {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
 }
 
 .btn-order {
@@ -175,28 +156,80 @@ header {
     }
 }
 
-.menu-item h4 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.menu-anim {
-    background-color: green;
-    height: 100%;
-    width: 30px;
+.menu-anim.menu-detail {
+    flex-grow: 1;
+    flex-shrink: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-right: -30px;
+    min-width: 0;
+    padding-right: 70px;
 }
 
-.menu-anim:hover {
-    margin-right: 0px;
+.menu-anim.menu-detail h4 {
+    margin: 0;
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.menu-anim.menu-detail p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.menu-anim.menu-detail p span {
+    font-weight: bold;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.menu-anim.menu-validation {
+    background: #99E2D0;
+    width: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.3s ease-out;
+    flex-shrink: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.menu-anim.menu-validation i {
+    color: white;
+    font-size: 1.5rem;
+    transform: scale(0);
+    transition: transform 0.3s ease-out;
+}
+
+.menu-item:hover {
+    .menu-anim.menu-detail {}
+
+    .menu-anim.menu-validation {
+        width: 60px;
+    }
+
+    .menu-anim.menu-validation i {
+        transform: scale(1);
+    }
 }
 
 /****** Media queries ***********/
-/* Medium devices (PC, less/equal than 1024px) */
+/* Medium devices (PC, more/equal than 1024px) */
 @media (min-width: 1024px) {
 
     .container .restaurant-title {
@@ -212,26 +245,18 @@ header {
 
         .menu-item-all {
             display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            align-content: center;
+            flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            align-items: flex-start;
             width: 100%;
 
             .menu-item {
                 display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                width: 50%;
+                width: calc(50% - 10px);
+                max-width: 450px;
             }
         }
-    }
-
-    .menu-item::after {
-
-    }
-
-    .menu-item:hover::after {
-
     }
 }
