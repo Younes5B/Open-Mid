@@ -231,8 +231,7 @@ header {
 /****** Media queries ***********/
 /* Medium devices (PC, more/equal than 1024px) */
 @media (min-width: 1024px) {
-
-    .container .restaurant-title {
+ .container .restaurant-title {
         justify-content: center;
         gap: 30px;
     }
@@ -240,17 +239,24 @@ header {
     .container {
 
         .menu h3 {
-            margin-left: 24%;
+            margin-left: -400px;
+            text-align: center;
+            padding-left: 0;
         }
 
-        .menu-item-all {
+        .menu h3::after {
+            margin-left: 875px;
+        } 
+
+        .menu .menu-item-all {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
             align-items: flex-start;
             width: 100%;
+            align-content: center;
 
             .menu-item {
                 display: flex;

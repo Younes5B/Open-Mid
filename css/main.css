@@ -537,18 +537,24 @@ header .fa-arrow-left {
     gap: 30px;
   }
   .container .menu h3 {
-    margin-left: 24%;
+    margin-left: -400px;
+    text-align: center;
+    padding-left: 0;
   }
-  .container .menu-item-all {
+  .container .menu h3::after {
+    margin-left: 875px;
+  }
+  .container .menu .menu-item-all {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     align-items: flex-start;
     width: 100%;
+    align-content: center;
   }
-  .container .menu-item-all .menu-item {
+  .container .menu .menu-item-all .menu-item {
     display: flex;
     width: calc(50% - 10px);
     max-width: 450px;
