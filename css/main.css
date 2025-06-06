@@ -395,6 +395,7 @@ header .fa-arrow-left {
 }
 .container .menu {
   margin-bottom: 40px;
+  padding-left: 10px;
 }
 .container .menu h3 {
   font-size: 18px;
@@ -403,6 +404,11 @@ header .fa-arrow-left {
   margin-bottom: 20px;
   position: relative;
   color: #353535;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  width: fit-content;
 }
 .container .menu h3:after {
   content: "";
@@ -469,7 +475,20 @@ header .fa-arrow-left {
   flex-direction: column;
   justify-content: center;
   min-width: 0;
+}
+
+.menu-anim.menu-detail:hover {
   padding-right: 70px;
+}
+
+.menu-anim.menu-detail-deux {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.menu-anim.menu-detail-deux span {
+  font-weight: bold;
 }
 
 .menu-anim.menu-detail h4 {
@@ -482,12 +501,8 @@ header .fa-arrow-left {
 }
 
 .menu-anim.menu-detail p {
-  margin: 5px 0 0 0;
   font-size: 0.9rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
+  font-size: 1rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -536,20 +551,25 @@ header .fa-arrow-left {
     justify-content: center;
     gap: 30px;
   }
-  .container .menu h3 {
-    margin-left: -400px;
-    text-align: center;
+  .container .menu {
+    max-width: 950px;
+    margin: 0 auto;
+    display: block;
     padding-left: 0;
   }
-  .container .menu h3::after {
-    margin-left: 875px;
+  .container .menu .menu-title {
+    margin-left: 10%;
+  }
+  .container .menu h3 {
+    text-align: center;
+    padding-left: 0;
+    margin-left: 26%;
   }
   .container .menu .menu-item-all {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
     align-items: flex-start;
     width: 100%;
     align-content: center;

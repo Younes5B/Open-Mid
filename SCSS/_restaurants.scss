@@ -80,6 +80,7 @@ header {
 
     .menu {
         margin-bottom: 40px;
+        padding-left: 10px;
 
         h3 {
             font-size: 18px;
@@ -88,6 +89,11 @@ header {
             margin-bottom: 20px;
             position: relative;
             color: $dark-grey;
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            width: fit-content;
 
             &:after {
                 content: "";
@@ -163,7 +169,20 @@ header {
     flex-direction: column;
     justify-content: center;
     min-width: 0;
+}
+
+.menu-anim.menu-detail:hover {
     padding-right: 70px;
+}
+
+.menu-anim.menu-detail-deux {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.menu-anim.menu-detail-deux span {
+font-weight: bold;
 }
 
 .menu-anim.menu-detail h4 {
@@ -176,12 +195,8 @@ header {
 }
 
 .menu-anim.menu-detail p {
-    margin: 5px 0 0 0;
     font-size: 0.9rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
+    font-size: 1rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -231,29 +246,37 @@ header {
 /****** Media queries ***********/
 /* Medium devices (PC, more/equal than 1024px) */
 @media (min-width: 1024px) {
- .container .restaurant-title {
+    .container .restaurant-title {
         justify-content: center;
         gap: 30px;
     }
 
     .container {
 
-        .menu h3 {
-            margin-left: -400px;
-            text-align: center;
+        .menu {
+            max-width: 950px;
+            margin: 0 auto;
+            display: block;
             padding-left: 0;
         }
 
-        .menu h3::after {
-            margin-left: 875px;
-        } 
+        .menu .menu-title {
+            margin-left: 10%;
+        }
+
+        .menu h3 {
+            text-align: center;
+            padding-left: 0;
+            margin-left: 26%;
+        }
+
+        .menu h3::after {}
 
         .menu .menu-item-all {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
             align-items: flex-start;
             width: 100%;
             align-content: center;
